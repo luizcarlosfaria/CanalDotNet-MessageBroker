@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+    - "15672:15672"
+    # - "5672:5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: usuario
+      RABBITMQ_DEFAULT_PASS: senha
+      RABBITMQ_DEFAULT_VHOST: vhost
+    volumes:
+      - mq_data:/var/lib/rabbitmq/mnesia
+
+volumes:
+  mq_data:
