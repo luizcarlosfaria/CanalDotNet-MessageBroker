@@ -43,3 +43,6 @@ Build: `docker-compose down -v`
 
 > ### [/protocols/03-STOMP](https://github.com/luizcarlosfaria/CanalDotNet-MessageBroker/tree/master/protocols/03-STOMP)
 > Exemplo [STOMP](http://localhost:15670)
+
+### [/patterns](https://github.com/luizcarlosfaria/CanalDotNet-MessageBroker/tree/master/patterns)
+MessageBrokers são efetivamente simples, por isso sua utilização pode ser composta e configurada de diversas formas, diversas dessas formas de uso foram catalogadas como padrões de mensageria. Nesse tópico vamos abordar os principais padrões.
