@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  rabbitmq:    
+    build:
+      context: .
+      dockerfile: rabbit-mq-plugins.dockerfile
+    ports:
+    - "15672:15672"  #Management
+    - "5672:5672"    #AMQP
+    - "25672:25672"  #clustering
+    
+    - "1883:1883"    #rabbitmq_mqtt
+    - "15675:15675"  #rabbitmq_web_mqtt
+    - "15670:15670"  #rabbitmq_web_mqtt_examples
+
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - mq_data:/var/lib/rabbitmq/mnesia
+
+volumes:
+  mq_data:
