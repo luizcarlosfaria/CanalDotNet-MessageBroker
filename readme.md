@@ -25,14 +25,14 @@ Esses são exemplos de setup do RabbitMQ. A intenção desses exemplos é aprese
 > * [rabbitmq_stomp](https://www.rabbitmq.com/stomp.html)
 > * [rabbitmq_web_stomp](https://www.rabbitmq.com/web-stomp.html)
 
-> ### [/protocols](https://github.com/luizcarlosfaria/CanalDotNet-MessageBroker/tree/master/protocols)
-> Uma das features mais elegantes do RabbitMQ é a capacidade de trabalhar com AMQP e outros protocolos que são úteis na hora de desenhar soluções baseadas em IoT ou mesmo para a Web. Os exemplos que veremos aqui contemplam AMQP, MQTT e STAMP.
->
-> Comandos Uteis: 
->
-> Build: ```docker-compose up --build```
->
-> Build: `docker-compose down -v` 
+### [/protocols](https://github.com/luizcarlosfaria/CanalDotNet-MessageBroker/tree/master/protocols)
+Uma das features mais elegantes do RabbitMQ é a capacidade de trabalhar com AMQP e outros protocolos que são úteis na hora de desenhar soluções baseadas em IoT ou mesmo para a Web. Os exemplos que veremos aqui contemplam AMQP, MQTT e STAMP.
+
+Comandos Uteis: 
+
+Build: ```docker-compose up --build```
+
+Build: `docker-compose down -v` 
 
 
 > ### [/protocols/01-AMQP](https://github.com/luizcarlosfaria/CanalDotNet-MessageBroker/tree/master/protocols/01-AMQP)
