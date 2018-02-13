@@ -45,4 +45,4 @@ Build: `docker-compose down -v`
 > Exemplo [STOMP](http://localhost:15670)
 
 ### [/patterns](https://github.com/luizcarlosfaria/CanalDotNet-MessageBroker/tree/master/patterns)
-MessageBrokers são efetivamente simples, por isso sua utilização pode ser composta e configurada de diversas formas, diversas dessas formas de uso foram catalogadas como padrões de mensageria. Nesse tópico vamos abordar os principais padrões.
+MessageBrokers são mecanismos complexos na sua implementação, mas extremamente fáceis de serem usados. Sua simplicidade favorece a possibilidade de ser configurado de diversas formas, favorecendo muitos modelos de uso. Alguns destes modelos são considerados padrões. Nesse tópico vamos abordar os principais padrões.
