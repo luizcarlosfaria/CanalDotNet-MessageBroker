@@ -46,3 +46,5 @@ Build: `docker-compose down -v`
 
 ### [/patterns](https://github.com/luizcarlosfaria/CanalDotNet-MessageBroker/tree/master/patterns)
 MessageBrokers são mecanismos complexos na sua implementação, mas extremamente fáceis de serem usados. Sua simplicidade favorece a possibilidade de ser configurado de diversas formas, favorecendo muitos modelos de uso. Alguns destes modelos são considerados padrões. Nesse tópico vamos abordar os principais padrões.
+
+Até aqui, todos os exemplos que vimos são exemplos hipotéticos e/ou meras demonstrações, talvez abstratas, mas necessárias para mostrar como os pontos se conectam em um message broker AMQP. Daqui pra frente, veremos exemplos de soluções reais e práticas, isolados para fins de demonstração.

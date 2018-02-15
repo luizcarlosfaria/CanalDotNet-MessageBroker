@@ -51,14 +51,15 @@ namespace AMQP.Exemplo
                         props.ContentType = "text/plain";
                         props.DeliveryMode = 2;
                         props.Headers = new Dictionary<string, object>
-                    {
-                        { "latitude", 51.5252949 },
-                        { "longitude", -0.0905493 }
-                    };
+                        {
+                            { "latitude", 51.5252949 },
+                            { "longitude", -0.0905493 }
+                        };
 
-                        model.BasicPublish("minha_exchange",
-                                           "app", props,
-                                           messageBodyBytes);
+                        model.BasicPublish(exchange: "minha_exchange",
+                                           routingKey: "app",
+                                           basicProperties: props,
+                                           body: messageBodyBytes);
 
                     }
                 }
@@ -92,10 +93,24 @@ namespace AMQP.Exemplo
             {
                 using (IModel model = connection.CreateModel())
                 {
-                    model.ExchangeDeclare("minha_exchange", "topic", false, false, null);
-
-                    model.QueueDeclare("queue1_work", true, false, false, null);
-                    model.QueueBind("queue1_work", "minha_exchange", "app");
+                    model.ExchangeDeclare(
+                        exchange: "minha_exchange",
+                        type: "topic",
+                        durable: false,
+                        autoDelete: false,
+                        arguments: null);
+                    
+                    model.QueueDeclare(
+                        queue: "queue1_work",
+                        durable: true,
+                        exclusive: false,
+                        autoDelete: false,
+                        arguments: null);
+                    
+                    model.QueueBind(
+                        queue: "queue1_work", 
+                        exchange:"minha_exchange",
+                        routingKey: "app");
                 }
             }
         }
