@@ -10,14 +10,14 @@ namespace AMQP.Exemplo
 {
     class Program
     {
+        const int producerCount = 1;
+        const int consumerCount = 10;
+
+        const int produceAmount = 500_000;
+
         static void Main(string[] args)
         {
             EnsureResourceCreation();
-
-            int producerCount = 2;
-            int consumerCount = 10;
-
-
 
             for (int threadCount = 1; threadCount <= producerCount; threadCount++)
             {
@@ -42,7 +42,7 @@ namespace AMQP.Exemplo
             {
                 using (IModel model = connection.CreateModel())
                 {
-                    for (long seq = 1; seq < 500_000; seq++)
+                    for (long seq = 1; seq < produceAmount; seq++)
                     {
 
                         byte[] messageBodyBytes = System.Text.Encoding.UTF8.GetBytes($"Hello, world! NUM {seq}");
@@ -64,7 +64,7 @@ namespace AMQP.Exemplo
                     }
                 }
             }
-            Console.WriteLine("Foram enviadas 500 000 mensagens para a fila");
+            Console.WriteLine($"Foram enviadas {produceAmount} mensagens para a fila");
         }
 
 
